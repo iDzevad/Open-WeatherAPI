@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API - Sensor Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sensor_data.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='pictures/cloud.png') }}" type="image/png">
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <script src="{{ url_for('static', filename='js/sensor_data.js') }}" defer></script>
+</head>
+<body>
+    <div class="burger-menu">
+        <span class="burger-icon" onclick="toggleBurgerMenu()">&#9776;</span>
+        <h2>Weather API</h2>
+    </div>
+
+    <div class="menu-options">
+        <a href="#Live">Live</a>
+        <a href="{{ url_for('sensor_graph') }}">Graph</a>
+        <a href="{{ url_for('index') }}">Logout</a>
+    </div>
+
+    <div class="container-wrapper">
+        <div class="container">
+            <h1>Venlo, Netherlands</h1>
+            <table>
+                {% if sensor_data %}
+                    <tr>
+                        <th>ID</th>
+                        <td>{{ sensor_data.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Timestamp</th>
+                        <td>{{ sensor_data.timestamp }}</td>
+                    </tr>
+                    <tr>
+                        <th>Humidity (%)</th>
+                        <td>{{ sensor_data.humidity }}</td>
+                    </tr>
+                    <tr>
+                        <th>Temperature (°C)</th>
+                        <td>{{ sensor_data.temperature }}</td>
+                    </tr>
+                    <tr>
+                        <th>Light Level (lux)</th>
+                        <td>{{ sensor_data.light_level }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="2">No sensor data available</td>
+                    </tr>
+                {% endif %}
+            </table>
+
+            <div id="map1" style="height: 300px;"></div>
+        </div>
+
+        <div class="container">
+            <h1>Eindhoven, Netherlands</h1>
+            <table>
+                {% if sensor_data %}
+                    <tr>
+                        <th>ID</th>
+                        <td>{{ second_sensor_data.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Timestamp</th>
+                        <td>{{ second_sensor_data.timestamp }}</td>
+                    </tr>
+                    <tr>
+                        <th>Humidity (%)</th>
+                        <td>{{ second_sensor_data.humidity }}</td>
+                    </tr>
+                    <tr>
+                        <th>Temperature (°C)</th>
+                        <td>{{ second_sensor_data.temperature }}</td>
+                    </tr>
+                    <tr>
+                        <th>Light Level (lux)</th>
+                        <td>{{ second_sensor_data.light_level }}</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="2">No sensor data available</td>
+                    </tr>
+                {% endif %}
+            </table>
+
+            <div id="map2" style="height: 300px;"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='pictures/cloud.png') }}" type="image/png">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="big-picture-container">
+        <img src="{{ url_for('static', filename='pictures/placeholder.jpg') }}" alt="Big Picture" class="big-picture">
+        <div class="image-text">
+            <h1 class="animated-header">Welcome to Weather API</h1>
+            <p>Discover the Power of API & Explore our Services.</p>
+        </div>
+    </div>
+
+    <div class="burger-menu">
+        <span class="burger-icon" onclick="toggleBurgerMenu()">&#9776;</span>
+        <h2>Weather API</h2>
+    </div>
+
+    <div class="big-picture" id="big-picture">
+    </div>
+
+    <div class="info-section" id="info">
+        <h2>Info</h2>
+        <div class="info-content">
+            <div class="info-text">
+                <p>
+                    Discover the essence of our platform through our comprehensive information section. 
+                    Learn about our innovative features, explore the benefits of our services, and 
+                    understand how our platform works seamlessly to meet your needs. Dive into frequently 
+                    asked questions for quick answers, or reach out to us directly for personalized 
+                    assistance. Experience the power of our platform through insightful testimonials 
+                    from satisfied users.
+                </p>
+            </div>
+            <div class="info-picture-placeholder"></div>
+        </div>
+    </div>
+
+    <div class="contact-section" id="contact">
+        <h2>Contact</h2>
+        <div class="contact-content">
+            <div class="contact-picture-placeholder"></div>
+            <div class="contact-text">
+                <p>
+                    Easily connect with us through our contact 
+                    information section. Whether you have questions, feedback, or inquiries, we're 
+                    here to help. Reach out to our dedicated support team via email, phone, or 
+                    social media channels. We value your input and look forward to assisting you 
+                    every step of the way.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-options">
+        <a href="#info" onclick="scrollToSection('#info')">Info</a>
+        <a href="#contact" onclick="scrollToSection('#contact')">Contact</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a> 
+    </div>
+</body>
+</html>

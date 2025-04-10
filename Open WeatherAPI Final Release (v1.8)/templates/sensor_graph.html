@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API - Sensor Graph</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sensor_graph.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='pictures/cloud.png') }}" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/sensor_graph.js') }}" defer></script>
+</head>
+<body>
+    <div class="burger-menu">
+        <span class="burger-icon" onclick="toggleBurgerMenu()">&#9776;</span>
+        <h2>Weather API</h2>
+    </div>
+
+    <div class="menu-options">
+        <a href="{{ url_for('get_sensor_data') }}">Live</a>
+        <a href="{{ url_for('sensor_graph') }}">Graph</a>
+        <a href="{{ url_for('index') }}">Logout</a>
+    </div>
+
+    <div class="container">
+        <h1>Location: Venlo, Netherlands</h1>
+
+        <div class="chart-box temperature-chart">
+            <h2>Average Temperature: {{ avg_temperature }} °C</h2>
+            <div class="chart-container">
+                <canvas id="temperatureChart" width="800" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-box humidity-chart" style="display: none;">
+            <h2>Average Humidity: {{ avg_humidity }}%</h2>
+            <div class="chart-container">
+                <canvas id="humidityChart" width="800" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-box light-level-chart" style="display: none;">
+            <h2>Average Light Level: {{ avg_light_level }} lux</h2>
+            <div class="chart-container">
+                <canvas id="lightLevelChart" width="800" height="400"></canvas>
+            </div>
+        </div>
+
+        <div class="arrow left-arrow" onclick="showPreviousChart()" style="left: -80px;">
+            <span>&lt;</span>
+        </div>
+        <div class="arrow right-arrow" onclick="showNextChart()" style="right: -80px;">
+            <span>&gt;</span>
+        </div>
+
+    </div>
+
+<!-- JavaScript for temperature chart -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var timestamps = {{ timestamps | tojson }};
+        var temperatures = {{ temperatures | tojson }};
+        
+        // Format timestamps to include both date and time, with date only when it changes
+        var formattedTimestamps = [];
+        var previousDate = null;
+        timestamps.forEach(function(timestamp) {
+            var date = new Date(timestamp);
+            var currentDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            var currentTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+            if (currentDate !== previousDate) {
+                formattedTimestamps.push(currentDate + ' ' + currentTime);
+                previousDate = currentDate;
+            } else {
+                formattedTimestamps.push(currentTime);
+            }
+        });
+
+        /**
+         * Create a new Chart object for temperature
+         */
+        var ctxTemp = document.getElementById('temperatureChart').getContext('2d');
+        var temperatureChart = new Chart(ctxTemp, {
+            type: 'bar',
+            data: {
+                labels: formattedTimestamps,
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: temperatures,
+                    borderColor: 'red',
+                    backgroundColor: 'red',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date & Time'
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Humidity (%)'
+                        }
+                    }]
+                },
+                animation: false,
+                hover: {
+                    mode: 'nearest',
+                    intersect: false
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                    axis: 'x',
+                    hover: false
+                }
+            }
+        });
+    });
+</script>
+
+<!-- JavaScript for humidity chart -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var timestamps = {{ timestamps | tojson }};
+        var humidity = {{ humidity | tojson }};
+
+        // Format timestamps to include both date and time, with date only when it changes
+        var formattedTimestamps = [];
+        var previousDate = null;
+        timestamps.forEach(function(timestamp) {
+            var date = new Date(timestamp);
+            var currentDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            var currentTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+            if (currentDate !== previousDate) {
+                formattedTimestamps.push(currentDate + ' ' + currentTime);
+                previousDate = currentDate;
+            } else {
+                formattedTimestamps.push(currentTime);
+            }
+        });
+
+        /**
+         * Create a new Chart object for humidity
+         */
+        var ctxHumidity = document.getElementById('humidityChart').getContext('2d');
+        var humidityChart = new Chart(ctxHumidity, {
+            type: 'bar',
+            data: {
+                labels: formattedTimestamps,
+                datasets: [{
+                    label: 'Humidity (%)',
+                    data: humidity,
+                    borderColor: 'blue',
+                    backgroundColor: 'blue',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date & Time'
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Humidity (%)'
+                        }
+                    }]
+                },
+                animation: false,
+                hover: {
+                    mode: 'nearest',
+                    intersect: false
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                    axis: 'x',
+                    hover: false
+                }
+            }
+        });
+    });
+</script>
+
+<!-- JavaScript for light level chart -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var timestamps = {{ timestamps | tojson }};
+        var lightLevel = {{ light_level | tojson }};
+        
+        // Format timestamps to include both date and time, with date only when it changes
+        var formattedTimestamps = [];
+        var previousDate = null;
+        timestamps.forEach(function(timestamp) {
+            var date = new Date(timestamp);
+            var currentDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+            var currentTime = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+            if (currentDate !== previousDate) {
+                formattedTimestamps.push(currentDate + ' ' + currentTime);
+                previousDate = currentDate;
+            } else {
+                formattedTimestamps.push(currentTime);
+            }
+        });
+
+        /**
+         * Create a new Chart object for light level
+         */
+        var ctxLight = document.getElementById('lightLevelChart').getContext('2d');
+        var lightLevelChart = new Chart(ctxLight, {
+            type: 'bar',
+            data: {
+                labels: formattedTimestamps,
+                datasets: [{
+                    label: 'Light Level (lux)',
+                    data: lightLevel,
+                    borderColor: 'black',
+                    backgroundColor: 'black',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date & Time'
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Humidity (%)'
+                        }
+                    }]
+                },
+                animation: false,
+                hover: {
+                    mode: 'nearest',
+                    intersect: false
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                },
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                    axis: 'x',
+                    hover: false
+                }
+            }
+        });
+    });
+</script>
+
+<script>
+    var charts = ['temperature-chart', 'humidity-chart', 'light-level-chart'];
+    var currentChartIndex = 0;
+
+    /**
+     * Show the previous chart in the list
+     */
+    function showPreviousChart() {
+        if (currentChartIndex === 0) {
+            currentChartIndex = charts.length - 1;
+        } else {
+            currentChartIndex--;
+        }
+        showCurrentChart();
+    }
+
+    /**
+     * Show the next chart in the list
+     */
+    function showNextChart() {
+        if (currentChartIndex === charts.length - 1) {
+            currentChartIndex = 0;
+        } else {
+            currentChartIndex++;
+        }
+        showCurrentChart();
+    }
+
+    /**
+     * Display the current chart based on the index
+     */
+    function showCurrentChart() {
+        var chartToShow = charts[currentChartIndex];
+        charts.forEach(function(chart) {
+            var chartBox = document.querySelector('.' + chart);
+            if (chart === chartToShow) {
+                chartBox.style.display = 'block';
+            } else {
+                chartBox.style.display = 'none';
+            }
+        });
+    }
+</script>
+</body>
+</html>

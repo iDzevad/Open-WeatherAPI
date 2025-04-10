@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='pictures/cloud.png') }}" type="image/png">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('index') }}" class="back-to-home">
+            <img src="{{ url_for('static', filename='pictures/arrow.png') }}" alt="Back to Home"></a>
+        <h2>Weather API</h2>
+    </div>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form class="login-form" action="#" method="POST" autocomplete="off">
+            <label for="username">
+                Username
+            </label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">
+                Password
+            </label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+
+            {% if error %}
+                <p class="error-text">
+                    {{ error }}
+                </p>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
