@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: Sensor Data API
+  description: API documentation for accessing sensor data
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+paths:
+  /:
+    get:
+      summary: Home page
+      responses:
+        '200':
+          description: Returns the home page
+  /sensor_graph:
+    get:
+      summary: Get sensor graph data
+      responses:
+        '200':
+          description: Returns sensor graph data
+  /login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+            required:
+              - username
+              - password
+      responses:
+        '302':
+          description: Redirects to sensor_data route upon successful login
+        '200':
+          description: Invalid username or password
+  /register:
+    post:
+      summary: User registration
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+            required:
+              - username
+              - password
+      responses:
+        '302':
+          description: Redirects to login page after successful registration
+        '200':
+          description: Username already exists
+  /sensor_data:
+    get:
+      summary: Get sensor data
+      responses:
+        '200':
+          description: Returns latest sensor data
