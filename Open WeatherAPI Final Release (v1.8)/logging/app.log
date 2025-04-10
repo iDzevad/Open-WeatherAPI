@@ -1,0 +1,113 @@
+2024-06-01 19:51:58,303 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:51:58,303 - app - INFO - Response: 404 NOT FOUND [data]
+2024-06-01 19:52:04,396 - app - INFO - Request: GET http://127.0.0.1:5000/
+2024-06-01 19:52:48,410 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_data
+2024-06-01 19:53:08,686 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_data
+2024-06-01 19:53:08,700 - app - INFO - Response: 200 OK [data]
+2024-06-01 19:53:08,743 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/sensor_data.css
+2024-06-01 19:53:08,745 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/sensor_data.js
+2024-06-01 19:53:09,016 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:53:09,023 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:53:09,033 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 19:53:09,049 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:37,216 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_data
+2024-06-01 19:54:37,232 - app - INFO - Response: 200 OK [data]
+2024-06-01 19:54:37,261 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/sensor_data.js
+2024-06-01 19:54:37,265 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/sensor_data.css
+2024-06-01 19:54:37,528 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:37,535 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:54:37,539 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 19:54:37,542 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:54:37,554 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/cloud.png
+2024-06-01 19:54:37,571 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:40,328 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:54:45,136 - app - INFO - Request: GET http://127.0.0.1:5000/
+2024-06-01 19:54:45,145 - app - INFO - Response: 200 OK [data]
+2024-06-01 19:54:45,191 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/styles.css
+2024-06-01 19:54:45,194 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/script.js
+2024-06-01 19:54:45,197 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:45,224 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:45,235 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 19:54:45,238 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/Info_blauw.png
+2024-06-01 19:54:45,239 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:54:45,241 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/contact-img.png
+2024-06-01 19:54:45,245 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:45,248 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:46,863 - app - INFO - Request: GET http://127.0.0.1:5000/login
+2024-06-01 19:54:46,877 - app - INFO - Response: 200 OK [data]
+2024-06-01 19:54:46,928 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/login.css
+2024-06-01 19:54:46,934 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:46,939 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/arrow.png
+2024-06-01 19:54:46,943 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:54:46,945 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 19:54:46,950 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:54:49,293 - app - INFO - Request: POST http://127.0.0.1:5000/login
+2024-06-01 19:54:49,300 - app - INFO - Response: 302 FOUND [data]
+2024-06-01 19:54:49,308 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_data
+2024-06-01 19:54:49,311 - app - INFO - Response: 200 OK [data]
+2024-06-01 19:54:49,369 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/sensor_data.js
+2024-06-01 19:54:49,373 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/sensor_data.css
+2024-06-01 19:54:49,375 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:54:49,376 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:54:49,390 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 19:54:49,393 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:54:50,706 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:56:01,277 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:56:11,952 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:56:36,107 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:56:36,241 - app - INFO - Response: 200 OK [data]
+2024-06-01 19:56:36,279 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/sensor_graph.js
+2024-06-01 19:56:36,281 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/sensor_graph.css
+2024-06-01 19:56:36,285 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:56:36,289 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:56:36,311 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 19:56:36,314 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:58:11,767 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:58:20,614 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:58:25,991 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:59:07,177 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:59:17,466 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 19:59:17,605 - app - INFO - Response: 200 OK [data]
+2024-06-01 19:59:17,648 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/sensor_graph.js
+2024-06-01 19:59:17,650 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/sensor_graph.css
+2024-06-01 19:59:17,898 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 19:59:17,918 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 19:59:17,928 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 19:59:17,931 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 20:02:05,788 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:02:39,653 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:03:46,710 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:04:11,090 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:04:29,504 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:04:33,188 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:04:50,477 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_data
+2024-06-01 20:04:50,477 - app - INFO - Response: 200 OK [data]
+2024-06-01 20:04:50,527 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/sensor_data.js
+2024-06-01 20:04:50,535 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/sensor_data.css
+2024-06-01 20:04:50,535 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 20:04:50,535 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 20:04:50,555 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 20:04:50,557 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 20:04:57,133 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_data
+2024-06-01 20:04:57,133 - app - INFO - Response: 200 OK [data]
+2024-06-01 20:04:57,172 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/sensor_data.js
+2024-06-01 20:04:57,172 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/sensor_data.css
+2024-06-01 20:04:57,183 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 20:04:57,185 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 20:04:57,198 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 20:04:57,201 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 20:05:01,280 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:05:13,937 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:05:31,655 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:08:39,660 - app - INFO - Request: GET http://127.0.0.1:5000/sensor_graph
+2024-06-01 20:09:30,345 - app - INFO - Request: GET http://127.0.0.1:5000/
+2024-06-01 20:09:30,360 - app - INFO - Response: 200 OK [data]
+2024-06-01 20:09:30,417 - app - INFO - Request: GET http://127.0.0.1:5000/static/css/styles.css
+2024-06-01 20:09:30,417 - app - INFO - Request: GET http://127.0.0.1:5000/static/js/script.js
+2024-06-01 20:09:30,417 - app - INFO - Response: 200 OK [direct passthrough]
+2024-06-01 20:09:30,417 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 20:09:30,438 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/placeholder.jpg
+2024-06-01 20:09:30,444 - app - INFO - Response: 304 NOT MODIFIED [direct passthrough]
+2024-06-01 20:09:30,458 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/Info_blauw.png
+2024-06-01 20:09:30,460 - app - INFO - Request: GET http://127.0.0.1:5000/static/pictures/contact-img.png
+2024-06-01 20:09:30,460 - app - INFO - Response: 200 OK [direct passthrough]

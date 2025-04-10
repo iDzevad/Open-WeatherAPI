@@ -1,0 +1,4 @@
+2024-06-14 14:03:17,839 - INFO - Cleanup script started
+2024-06-14 14:03:17,847 - INFO - Deleted 100 oldest records from sensor_data
+2024-06-14 14:03:17,847 - INFO - Deleted 100 oldest records from second_sensor_data
+2024-06-14 14:03:17,852 - INFO - Oldest records deleted successfully
